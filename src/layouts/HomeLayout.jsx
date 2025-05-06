@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import Marquee from 'react-fast-marquee';
 import LatestNews from '../components/LatestNews';
 import NavBar from '../components/NavBar';
+import LeftAside from '../components/LeftAside';
+import RightAside from '../components/RightAside';
 
 const HomeLayout = () => {
     return (
@@ -17,15 +19,21 @@ const HomeLayout = () => {
                     <NavBar></NavBar>
                 </nav>
             </header>
-            <main>
+            <main className=' w-11/12 mx-auto my-3 grid grid-cols-12'>
             
-                <section className="left_nav"></section>
-                <section className="main">
+                <aside className='col-span-3'>
+                    <LeftAside></LeftAside>
+                </aside>
+                <section className="col-span-6">
                     <Outlet></Outlet>
                 </section>
-                <section className="right_nav"></section>
+                <aside className='col-span-3'>
+                    <RightAside></RightAside>
+                </aside>
             </main>
-            <footer></footer>
+            <footer>
+
+            </footer>
         </div>
     );
 };
